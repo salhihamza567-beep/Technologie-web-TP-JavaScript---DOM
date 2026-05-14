@@ -1,0 +1,70 @@
+CODE HTML :
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <input type="text" id="task">
+    <button id="add">Ajouter</button>
+
+    <ul id="list"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+CODE CSS :
+.completed {
+    text-decoration: line-through;
+    background-color: lightgreen;
+}
+CODE JS :
+let task = document.getElementById("task");
+
+let add = document.getElementById("add");
+
+let list = document.getElementById("list");
+
+add.addEventListener("click", function () {
+
+    let li = document.createElement("li");
+
+    li.textContent = task.value;
+
+    // bouton accomplie
+    let ok = document.createElement("button");
+
+    ok.textContent = "OK";
+
+    // bouton supprimer
+    let del = document.createElement("button");
+
+    del.textContent = "X";
+
+    li.appendChild(ok);
+
+    li.appendChild(del);
+
+    list.appendChild(li);
+
+    // vider input
+    task.value = "";
+
+    // accomplie
+    ok.addEventListener("click", function () {
+
+        li.classList.toggle("completed");
+
+    });
+
+    // supprimer
+    del.addEventListener("click", function () {
+
+        li.remove();
+
+    });
+
+});
