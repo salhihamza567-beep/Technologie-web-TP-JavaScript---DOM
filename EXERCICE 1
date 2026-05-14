@@ -1,0 +1,27 @@
+CODE HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulation du DOM</title>
+</head>
+<body>
+<div id="conteneur">
+    <p id="monParagraphe">Ceci est un paragraphe</p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
+CODE JS :
+let div = document.getElementById("conteneur");
+
+let p = document.getElementById("monParagraphe");
+
+p.textContent = "Le texte a été modifié";
+
+p.style.backgroundColor = "lightblue";
+p.style.textAlign = "center";
+
+div.addEventListener("click", function () {
+    p.textContent = "Un clic a été détecté";
+});
